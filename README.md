@@ -1,65 +1,81 @@
-# Kiva Lender Behavior Analysis
+# Kiva Lender Behavior Clustering & Classification (R Project)
 
-This project analyzes lender behavior on [Kiva](https://www.kiva.org/), a microfinance crowdfunding platform, using real-world datasets.  
-Our goal was to identify meaningful lender profiles based on their past lending patterns and preferences, and build a model to predict lender types for personalized loan recommendations.
+This project analyzes lender behavior on Kiva, a microfinance platform where people lend to entrepreneurs in underserved areas.
 
----
+Using clustering and classification techniques in R, we explored what drives lenders to choose specific loans — based on attributes like borrower region, age, loan amount, sector, and more.
 
-## Objectives
-
-- Explore how different lender characteristics (like occupation, gender preferences, loan amounts, etc.) influence lending decisions.
-- Apply clustering to segment lenders into behavioral groups.
-- Train a classification model to predict these groups based on engineered features.
+> **Note:** The original dataset used in this analysis is not public.  
+> Only the R scripts and final result visualizations are shared in this repository.
 
 ---
 
-## Project Structure
+## Project Goals
 
-- `data/`: Raw input datasets from the Kiva platform (CSV files).
-- `scripts/`: R scripts for data preprocessing, clustering, feature engineering, and modeling.
-- `report/`: Final PDF report summarizing methods and findings.
-- `README.md`: This file.
-
----
-
-## Tools & Techniques
-
-- Language: **R**
-- Data Manipulation: `dplyr`, `tidyr`, `stringr`
-- Clustering: `kmeans`
-- Modeling: `randomForest`
-- Visualization: `ggplot2`, `factoextra`
-- Feature Engineering: Custom rules and occupation classification
+- Group lenders into behavioral clusters using **k-means**
+- Engineer features such as loan preferences, occupation, and region
+- Build a **random forest classifier** to predict lender cluster membership
+- Visualize the most important features and patterns per group
 
 ---
 
-## Results
+## Contents
 
-- Used **12-cluster k-means** to identify lender groups
-- Engineered features included:
-  - Gender preference of borrower
-  - Average borrower age
-  - Loan sector & loan size ranges
-  - Most common borrower region (continent/country)
-  - Classified occupations into higher-level categories
-- Achieved **80.9% accuracy** using a Random Forest model to predict cluster membership
-- Created summary visualizations to explain behavior patterns per group
+- `constructTablesAndModel.R`  
+  Full R script for:
+  - Data wrangling
+  - Feature engineering
+  - K-means clustering
+  - Random forest modeling
+  - Result visualization
+
+- Images of the results we achieved:
+  - Cluster-wise descriptive term frequency plots
+  - Feature importance bar charts
+  - Random Forest model accuracy output
 
 ---
 
-## Authors
+## Example Outputs
 
-Project by:
-- Shaked Shabat
-- Oren Raz
-- Ilay Damary
-- Guy Dulberg
+### Clustering Results
+Lenders were grouped into 12 behavioral clusters based on their preferences and activity.
 
-Done as part of our Data Analysis course.
+| Group 1 Example | Group 2 Example |
+|----------------|-----------------|
+| ![Clusters Group 1](images/descriptive_cluster_group1.png) | ![Clusters Group 2](images/descriptive_cluster_group2.png) |
+
+### Feature Importance
+
+- **Top Categories**
+  
+  ![Category Importance](images/importace_of_categories.png)
+
+- **Top Features**
+  
+  ![Top 10 Features](images/10_most_important_features.png)
+
+### Model Accuracy
+Random Forest classifier reached an accuracy of **~81%**.
+
+![Accuracy](images/accuracy_rf.png)
+
+---
+
+## Technologies Used
+
+- Language: R  
+- Libraries: `tidyverse`, `dplyr`, `ggplot2`, `randomForest`, `caret`, `pdp`, `cluster`
+
+---
+
+## About This Project
+
+- Built as part of a university course in data analysis
+- Team members: Shaked Shabat, Oren Raz, Ilay Damary, Guy Dulberg
 
 ---
 
 ## License
 
-This project is for educational and demonstration purposes only. Not affiliated with Kiva.org.
-
+This repository is for educational and demonstration purposes only.  
+It does **not include** the proprietary dataset provided for course work.
