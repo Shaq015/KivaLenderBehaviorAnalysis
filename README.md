@@ -42,22 +42,22 @@ Lenders were grouped into 12 behavioral clusters based on their preferences and 
 
 | Group 1 Example | Group 2 Example |
 |----------------|-----------------|
-| ![Clusters Group 1](images/descriptive_cluster_group1.png) | ![Clusters Group 2](images/descriptive_cluster_group2.png) |
+| ![Clusters Group 1](descriptive_cluster_group1.png) | ![Clusters Group 2](descriptive_cluster_group2.png) |
 
 ### Feature Importance
 
 - **Top Categories**
   
-  ![Category Importance](images/importace_of_categories.png)
+  ![Category Importance](importace_of_categories.png)
 
 - **Top Features**
   
-  ![Top 10 Features](images/10_most_important_features.png)
+  ![Top 10 Features](10_most_important_features.png)
 
 ### Model Accuracy
 Random Forest classifier reached an accuracy of **~81%**.
 
-![Accuracy](images/accuracy_rf.png)
+![Accuracy](accuracy_rf.png)
 
 ---
 
